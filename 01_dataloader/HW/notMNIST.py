@@ -43,10 +43,9 @@ print(next(iter(dataloader)))
 
 print(f'total number of data : {len(notmnist_dataset)}')
 
-len_test, len_train = divmod(len(notmnist_dataset), 3)
+len_test = len(notmnist_dataset) // 3
+len_train = len(notmnist_dataset) - len_test
 train_set, test_set = torch.utils.data.random_split(notmnist_dataset, [len_train, len_test])
 
 train_dataloader = DataLoader(train_set, batch_size=4, shuffle=True, num_workers=4)
 test_dataloader = DataLoader(test_set, batch_size=4, shuffle=True, num_workers=4)
-
-print(len(train_set))

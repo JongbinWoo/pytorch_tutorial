@@ -8,7 +8,7 @@ import numpy as np
 import pandas as pd 
 import matplotlib.pyplot as plt
 
-class NotMNIST_Dataset(Dataset):
+class NotMNISTDataset(Dataset):
     def __init__(self, root_dir, transform=None):
         self.root_dir = root_dir 
         self.transform = transform
@@ -35,7 +35,7 @@ class NotMNIST_Dataset(Dataset):
             df = df.append([[os.path.basename(i), os.path.dirname(i)[-1]] for i in image_list])
         return df
 
-notmnist_dataset = NotMNIST_Dataset(root_dir='/content/drive/MyDrive/pytorch_tutorial/pytorch_tutorial/01_dataloader/HW/notMNIST_small',
+notmnist_dataset = NotMNISTDataset(root_dir='/content/drive/MyDrive/pytorch_tutorial/pytorch_tutorial/01_dataloader/HW/notMNIST_small',
                                    transform=transforms.ToTensor())
 
 dataloader = DataLoader(notmnist_dataset, batch_size=4, shuffle=True, num_workers=4)

@@ -1,3 +1,3 @@
 *.tar
-
-/01_dataloader/HW/notMNIST_large/*
+*.gz
+/01_dataloader/HW/notMNIST_small/*

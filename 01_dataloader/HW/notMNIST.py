@@ -37,21 +37,8 @@ class NotMNIST_Dataset(Dataset):
 
 notmnist_dataset = NotMNIST_Dataset(root_dir='/content/drive/MyDrive/pytorch_tutorial/pytorch_tutorial/01_dataloader/HW/notMNIST_small',
                                    transform=transforms.ToTensor())
-# print(notmnist_dataset[12])
-# img_array = transforms.ToPILImage()(notmnist_dataset[0][0])
 
 dataloader = DataLoader(notmnist_dataset, batch_size=4, shuffle=True, num_workers=4)
 print(next(iter(dataloader)))
 
 print(f'total number of data : {len(notmnist_dataset)}')
-
-for i, (images, targets) in enumerate(dataloader):
-    img = images[0].numpy()
-    
-    plt.imshow(img.reshape((28,28)))#np.transpose(img, (1,2,0)))
-    plt.show()
-    # print(images.shape)
-    # print(targets.shape)
-
-    if i == 1:
-        break

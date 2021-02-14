@@ -2,3 +2,6 @@
 *.gz
 /01_dataloader/HW/notMNIST_small/*
 /01_dataloader/HW/notMNIST_large/*
+
+__pycache__/
+data/
